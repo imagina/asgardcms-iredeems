@@ -2,7 +2,7 @@
 
 use Illuminate\Routing\Router;
 
-$router->group(['prefix' => '/iredeems'], function (Router $router) {
+$router->group(['prefix' => '/iredeems/v1'], function (Router $router) {
 
   //======  ITEMS
   require('ApiRoutes/itemRoutes.php');

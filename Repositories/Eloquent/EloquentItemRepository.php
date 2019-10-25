@@ -13,6 +13,16 @@ class EloquentItemRepository extends EloquentBaseRepository implements ItemRepos
     /*== initialize query ==*/
     $query = $this->model->query();
 
+    /*== RELATIONSHIPS ==*/
+    if (in_array('*', $params->include)) {//If Request all relationships
+      $query->with([]);
+    } else {//Especific relationships
+      $includeDefault = ['translations'];//Default relationships
+      if (isset($params->include))//merge relations with default relationships
+        $includeDefault = array_merge($includeDefault, $params->include);
+      $query->with($includeDefault);//Add Relationships to query
+    }
+
     /*== FILTERS ==*/
     if (isset($params->filter)) {
       $filter = $params->filter;//Short filter
@@ -36,6 +46,10 @@ class EloquentItemRepository extends EloquentBaseRepository implements ItemRepos
 
     }
 
+    /*== FIELDS ==*/
+    if (isset($params->fields) && count($params->fields))
+     $query->select($params->fields);
+
     /*== REQUEST ==*/
     if (isset($params->page) && $params->page) {
       return $query->paginate($params->take);
@@ -44,5 +58,48 @@ class EloquentItemRepository extends EloquentBaseRepository implements ItemRepos
       return $query->get();
     }
   }//getItemsBy()
+
+  public function getItem($criteria, $params = false)
+  {
+      // INITIALIZE QUERY
+      $query = $this->model->query();
+
+      /*== RELATIONSHIPS ==*/
+      if (in_array('*', $params->include)) {//If Request all relationships
+        $query->with([]);
+      } else {//Especific relationships
+        $includeDefault = ['translations'];//Default relationships
+        if (isset($params->include))//merge relations with default relationships
+          $includeDefault = array_merge($includeDefault, $params->include);
+        $query->with($includeDefault);//Add Relationships to query
+      }
+
+      /*== FILTER ==*/
+      if (isset($params->filter)) {
+
+        $filter = $params->filter;
+
+        // find translatable attributes
+        $translatedAttributes = $this->model->translatedAttributes;
+
+        if(isset($filter->field))
+          $field = $filter->field;
+
+        // filter by translatable attributes
+        if (isset($field) && in_array($field, $translatedAttributes))//Filter by slug
+          $query->whereHas('translations', function ($query) use ($criteria, $filter, $field) {
+            $query->where('locale', $filter->locale)
+              ->where($field, $criteria);
+          });
+        else
+          // find by specific attribute or by id
+          $query->where($field ?? 'id', $criteria);
+
+      }
+
+
+      return $query->first();
+
+  }
 
 }
