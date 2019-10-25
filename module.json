@@ -1,0 +1,20 @@
+{
+    "name": "Iredeems",
+    "alias": "iredeems",
+    "description": "",
+    "keywords": [],
+    "version": "1.0.0",
+	"active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Iredeems\\Providers\\IredeemsServiceProvider",
+        "Modules\\Iredeems\\Providers\\RouteServiceProvider",
+        "Modules\\Iredeems\\Providers\\EventServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+      "helpers.php"
+
+    ],
+    "requires": []
+}
