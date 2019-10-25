@@ -11,10 +11,8 @@ class ItemTransformer extends Resource
       'id' => $this->when($this->id,$this->id),
       'name' => $this->when($this->name,$this->name),
       'value' => $this->when($this->value,$this->value),
-      'createdAtDate' => $this->when($this->created_at->format('Y-m-d'),$this->created_at->format('Y-m-d')),
-      'createdAtTime' => $this->when($this->created_at->format('H:i:s'),$this->created_at->format('H:i:s')),
-      'updateAtDate' => $this->when($this->updated_at->format('Y-m-d'),$this->updated_at->format('Y-m-d')),
-      'updateAtTime' => $this->when($this->updated_at->format('H:i:s'),$this->updated_at->format('H:i:s')),
+      'createdAt' => $this->when($this->created_at,$this->created_at),
+      'updatedAt' => $this->when($this->updated_at,$this->updated_at)
     ];
 
     // TRANSLATIONS

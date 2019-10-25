@@ -13,10 +13,8 @@ class RedeemTransformer extends Resource
       'userId' => $this->when($this->user_id,$this->user_id),
       'description' => $this->when($this->description,$this->description),
       'points' => $this->when($this->points,$this->points),
-      'createdAtDate' => $this->when($this->created_at->format('Y-m-d'),$this->created_at->format('Y-m-d')),
-      'createdAtTime' => $this->when($this->created_at->format('H:i:s'),$this->created_at->format('H:i:s')),
-      'updateAtDate' => $this->when($this->updated_at->format('Y-m-d'),$this->updated_at->format('Y-m-d')),
-      'updateAtTime' => $this->when($this->updated_at->format('H:i:s'),$this->updated_at->format('H:i:s')),
+      'createdAt' => $this->when($this->created_at,$this->created_at),
+      'updatedAt' => $this->when($this->updated_at,$this->updated_at)
     ];
 
     return $item;
