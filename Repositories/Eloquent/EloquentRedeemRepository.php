@@ -53,7 +53,7 @@ class EloquentRedeemRepository extends EloquentBaseRepository implements RedeemR
         }
 
          //add filter by user_id
-        if (isset($filter->userId)){
+        if (isset($filter->userId) && !empty($filter->userId)){
           $query->where('user_id', $filter->userId);
         }
 
