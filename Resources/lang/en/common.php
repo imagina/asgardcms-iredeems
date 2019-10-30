@@ -30,12 +30,14 @@ return [
       'points-for-buying-certain-amount-of-products-checkbox'=>'Enable points for buying a certain number of products',
       'points-for-buying-certain-amount-of-products'=>'Points for buying a certain amount of products',
       'quantity-of-products-to-buy-to-deliver-points'=>'Quantity of products to buy to deliver points',
+      'points-per-finished-poll-checkbox'=>'Enable points for Poll Finished',
+      'points-per-finished-poll'=>'Number of points per Poll Finished',
     ],
     'settingsMsg' => [
       'points-per-register'=>'Gift of points for registering',
       'points-per-greater-amount'=>'Points for purchase greater than ',
-      'points-by-buy-certain-quantity-products'=>"Points for making a purchase of :quantity products"
-
+      'points-by-buy-certain-quantity-products'=>"Points for making a purchase of :quantity products",
+      'points-per-poll'=>'Gift of points for poll',
 
     ]
 ];
