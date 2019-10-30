@@ -32,12 +32,15 @@ return [
       'quantity-of-products-to-buy-to-deliver-points'=>'Cantidad de productos a comprar para entregar puntos',
       'points-per-finished-poll-checkbox'=>'Habilitar puntos por Encuesta Terminada',
       'points-per-finished-poll'=>'Cantidad de puntos por Encuesta Terminada',
+      'points-per-finished-trivia-checkbox'=>'Habilitar puntos por Trivia Terminada',
+      'points-per-finished-trivia'=>'Cantidad de puntos por Trivia Terminada (NOTA: El rango de puntos por trivia sera tomado como prioridad, en otro caso se tomaran estos puntos)',
     ],
     'settingsMsg' => [
       'points-per-register'=>'Obsequio de puntos por registrarse',
       'points-per-greater-amount'=>'Puntos por compra mayor a ',
       'points-by-buy-certain-quantity-products'=>"Puntos por realizar una compra de :quantity productos",
       'points-per-poll'=>'Obsequio de puntos por encuesta',
+      'points-per-trivia'=>'Obsequio de puntos por trivia',
       
     ]
 ];

@@ -32,12 +32,15 @@ return [
       'quantity-of-products-to-buy-to-deliver-points'=>'Quantity of products to buy to deliver points',
       'points-per-finished-poll-checkbox'=>'Enable points for Poll Finished',
       'points-per-finished-poll'=>'Number of points per Poll Finished',
+      'points-per-finished-trivia-checkbox'=>'Enable points for Trivia Finished',
+      'points-per-finished-trivia'=>'Number of points per Trivia Finished (NOTE: The rank of points per trivia will be taken as a priority, otherwise these points will be taken)',
     ],
     'settingsMsg' => [
       'points-per-register'=>'Gift of points for registering',
       'points-per-greater-amount'=>'Points for purchase greater than ',
       'points-by-buy-certain-quantity-products'=>"Points for making a purchase of :quantity products",
       'points-per-poll'=>'Gift of points for poll',
+      'points-per-trivia'=>'Gift of points for trivia',
 
     ]
 ];
