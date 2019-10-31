@@ -8,6 +8,8 @@ $router->group(['prefix' => '/iredeems/v1'], function (Router $router) {
   require('ApiRoutes/itemRoutes.php');
   //======  REDEEMS
   require('ApiRoutes/redeemRoutes.php');
+  //======  Points
+  require('ApiRoutes/pointRoutes.php');
 
 
 });

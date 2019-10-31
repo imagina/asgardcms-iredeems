@@ -8,7 +8,12 @@ class CreatePointRequest extends BaseFormRequest
 {
     public function rules()
     {
-        return [];
+        return [
+            'user_id' => 'required',
+            'pointable_id' => 'required',
+            'pointable_type' => 'required',
+            'points' => 'required',
+        ];
     }
 
     public function translationRules()
@@ -23,11 +28,21 @@ class CreatePointRequest extends BaseFormRequest
 
     public function messages()
     {
-        return [];
+        return [
+            'user_id.required' => trans('iredeems::common.messages.field required is required'),
+            'pointable_id.required' => trans('iredeems::common.messages.field required is required'),
+            'pointable_type.required' => trans('iredeems::common.messages.field required is required'),
+            'points.required' => trans('iredeems::common.messages.field required is required'),
+        ];
     }
 
     public function translationMessages()
     {
-        return [];
+        return [
+            'user_id.required' => trans('iredeems::common.messages.field required is required'),
+            'pointable_id.required' => trans('iredeems::common.messages.field required is required'),
+            'pointable_type.required' => trans('iredeems::common.messages.field required is required'),
+            'points.required' => trans('iredeems::common.messages.field required is required'),
+        ];
     }
 }
