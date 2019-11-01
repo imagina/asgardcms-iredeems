@@ -190,4 +190,48 @@ class PointApiController extends BaseApiController
     
   }
 
+   /**
+   * Get calculates about Points
+   * @return Response
+   */
+  public function calculates(Request $request){
+    
+    try {
+
+      // Params
+      $params = $this->getParamsRequest($request);
+
+      // Get Filters
+      if($params->filter) {
+        $filter = $params->filter;
+
+        if(isset($filter->type)){
+          
+          // Obtain total points earned by the user
+          if($filter->type=="totalPointsUser"){
+            $points = $this->point->getTotalPoints($params);
+            $data = array(
+              "points" => (int)$points,
+              "userId" => $filter->userId
+            );
+          }
+
+        }
+
+      }
+      
+      $response = [
+        'data' => $data ? $data : '',
+      ];
+     
+     
+    } catch (\Exception $e) {
+      $status = $this->getStatusError($e->getCode());
+      $response = ["errors" => $e->getMessage()];
+    }
+
+    //Return response
+    return response()->json($response, $status ?? 200);
+  }
+
 }

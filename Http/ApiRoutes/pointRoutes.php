@@ -26,5 +26,9 @@ $router->group(['prefix' => '/points'], function (Router $router) {
     'uses' => 'PointApiController@show',
   ]);
   
+  $router->get('calculates/user', [
+    'as' => $locale . 'api.iredeems.calculates.user',
+    'uses' => 'PointApiController@calculates',
+  ]);
 
 });

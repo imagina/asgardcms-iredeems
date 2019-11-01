@@ -107,5 +107,17 @@ class EloquentPointRepository extends EloquentBaseRepository implements PointRep
       return $query->first();
 
     }
+
+    public function getTotalPoints($params = false){
+
+      if($params->filter) {
+
+        $filter = $params->filter;
+       
+        return $this->model->where('user_id', $filter->userId)->sum('points');
+
+      }
+
+    }
     
 }
