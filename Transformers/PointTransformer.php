@@ -15,6 +15,7 @@ class PointTransformer extends Resource
       'user' => new UserTransformer($this->whenLoaded('user')),
       'pointableId' => $this->when($this->pointable_id,$this->pointable_id),
       'pointableType' => $this->when($this->pointable_type,$this->pointable_type),
+      'type' => $this->when($this->type,$this->type),
       'description' => $this->when($this->description,$this->description),
       'points' => $this->when($this->points,$this->points),
       'createdAt' => $this->when($this->created_at,$this->created_at),

@@ -40,9 +40,12 @@ return [
       'points-per-finished-poll'=>'Number of points per Poll Finished',
       'points-per-finished-trivia-checkbox'=>'Enable points for Trivia Finished',
       'points-per-finished-trivia'=>'Number of points per Trivia Finished (NOTE: The rank of points per trivia will be taken as a priority, otherwise these points will be taken)',
+      'points-per-register-user-completed-checkbox'=>'Enable points for user registration COMPLETED',
+      'points-per-register-user-completed'=>'Number of points per user record',
     ],
     'settingsMsg' => [
       'points-per-register'=>'Gift of points for registering',
+      'points-per-register-completed'=>'Gift of points for register Completed',
       'points-per-greater-amount'=>'Points for purchase greater than ',
       'points-by-buy-certain-quantity-products'=>"Points for making a purchase of :quantity products",
       'points-per-poll'=>'Gift of points for poll',

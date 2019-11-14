@@ -19,6 +19,7 @@ class CreateIredeemsPointsTable extends Migration
             $table->foreign('user_id')->references('id')->on(config('auth.table', 'users'))->onDelete('restrict');
             $table->integer('pointable_id');
             $table->string('pointable_type');
+            $table->string('type')->nullable();
             $table->string('description')->nullable();
             $table->integer('points');
             $table->timestamps();

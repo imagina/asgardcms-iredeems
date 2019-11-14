@@ -16,6 +16,20 @@ return [
         'default'=>0
     ],
 
+    //Iprofile Points per register user COMPLETED
+    'points-per-register-user-completed-checkbox' => [
+        'description'  => 'iredeems::common.settings.points-per-register-user-completed-checkbox',
+        'view'         => 'checkbox',
+        'translatable' => false,
+        'default'=>false
+    ],
+    'points-per-register-user-completed' => [
+        'description'  => 'iredeems::common.settings.points-per-register-user-completed',
+        'view'         => 'number',
+        'translatable' => false,
+        'default'=>0
+    ],
+
     //Iquiz Points per finished a Poll
     'points-per-finished-poll-checkbox' => [
         'description'  => 'iredeems::common.settings.points-per-finished-poll-checkbox',

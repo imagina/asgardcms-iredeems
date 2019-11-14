@@ -65,6 +65,11 @@ class EloquentPointRepository extends EloquentBaseRepository implements PointRep
           $query->where('pointable_type', $filter->pointableType);
         }
 
+        //Add filter by type
+        if (isset($filter->type) && !empty($filter->type)){
+          $query->where('type', $filter->type);
+        }
+
       }
 
       /*== FIELDS ==*/

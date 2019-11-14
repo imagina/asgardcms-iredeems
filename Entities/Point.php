@@ -12,6 +12,7 @@ class Point extends Model
       'user_id',
       'pointable_id',
       'pointable_type',
+      'type',
       'description',
       'points'
     ];
