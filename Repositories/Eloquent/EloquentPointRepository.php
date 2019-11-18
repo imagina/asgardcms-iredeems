@@ -124,5 +124,20 @@ class EloquentPointRepository extends EloquentBaseRepository implements PointRep
       }
 
     }
+
+    public function getAvailablePoints($params = false){
+
+      // Total Points
+      $entry = $this->getTotalPoints($params);
+      // Points Redeemeds
+      $out = app("Modules\Iredeems\Repositories\RedeemRepository")->getRedeemedPoints($params);
+      // Availables
+      $availablePoints = (int)$entry-(int)$out;
+
+      return $availablePoints;
+
+    }
+
+
     
 }

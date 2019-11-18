@@ -112,5 +112,17 @@ class EloquentRedeemRepository extends EloquentBaseRepository implements RedeemR
 
     }
 
+    public function getRedeemedPoints($params = false){
+
+      if($params->filter) {
+
+        $filter = $params->filter;
+
+        return $this->model->where('user_id', $filter->userId)->sum('points');
+
+      }
+
+    }
+
 
 }

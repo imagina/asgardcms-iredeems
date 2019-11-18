@@ -38,4 +38,12 @@ class CacheRedeemDecorator extends BaseCacheDecorator implements RedeemRepositor
         });
     }
 
+    
+    public function getRedeemedPoints($params)
+    {
+        return $this->remember(function () use ($params) {
+        return $this->repository->getRedeemedPoints($params);
+        });
+    }
+
 }

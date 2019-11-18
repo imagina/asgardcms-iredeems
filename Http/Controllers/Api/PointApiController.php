@@ -216,6 +216,15 @@ class PointApiController extends BaseApiController
             );
           }
 
+          // Obtain Available points by user
+          if($filter->type=="availablePointsUser"){
+            $points = $this->point->getAvailablePoints($params);
+            $data = array(
+              "points" => (int)$points,
+              "userId" => $filter->userId
+            );
+          }
+
         }
 
       }
