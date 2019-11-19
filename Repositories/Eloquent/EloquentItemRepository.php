@@ -37,6 +37,11 @@ class EloquentItemRepository extends EloquentBaseRepository implements ItemRepos
         $query->whereDate($date->field, '<=', $date->to);
       }
 
+      //Random
+      if (isset($filter->random)) {
+        $query->inRandomOrder();
+      }
+
       //Order by
       if (isset($filter->order)) {
         $orderByField = $filter->order->field ?? 'created_at';//Default field

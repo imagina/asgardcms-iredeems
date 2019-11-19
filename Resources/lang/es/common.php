@@ -44,12 +44,12 @@ return [
       'points-per-register-user-completed'=>'Cantidad de puntos por registro de usuario Completado',
     ],
     'settingsMsg' => [
-      'points-per-register'=>'Obsequio de puntos por registrarse',
-      'points-per-register-completed'=>'Obsequio de puntos por registro Completado',
+      'points-per-register'=>'^Puntos por registrarse',
+      'points-per-register-completed'=>'Punots por registro Completado',
       'points-per-greater-amount'=>'Puntos por compra mayor a ',
       'points-by-buy-certain-quantity-products'=>"Puntos por realizar una compra de :quantity productos",
-      'points-per-poll'=>'Obsequio de puntos por encuesta',
-      'points-per-trivia'=>'Obsequio de puntos por trivia',
+      'points-per-poll'=>'Puntos por encuesta',
+      'points-per-trivia'=>'Puntos por trivia',
       
     ]
 ];

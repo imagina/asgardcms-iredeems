@@ -138,6 +138,28 @@ class EloquentPointRepository extends EloquentBaseRepository implements PointRep
 
     }
 
+    public function getGroupTotalPoints($params = false){
+      
+
+      if($params->filter) {
+
+        $filter = $params->filter;
+
+        $results = $this->model
+        ->select('id','type','description',\DB::raw('SUM(points) as total'))
+        ->where('user_id', $filter->userId)
+        ->groupBy('type')
+        ->orderBy('id','DESC')
+        ->orderBy('total', 'DESC')
+        ->get();
+        
+        return $results;
+
+      }
+     
+
+    }
+
 
     
 }

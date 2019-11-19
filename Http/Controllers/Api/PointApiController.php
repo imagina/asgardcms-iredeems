@@ -225,6 +225,11 @@ class PointApiController extends BaseApiController
             );
           }
 
+          // Obtain Total points by user, group by type
+          if($filter->type=="groupTotalPointsUser"){
+            $data = $this->point->getGroupTotalPoints($params);
+          }
+
         }
 
       }
