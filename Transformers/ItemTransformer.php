@@ -12,6 +12,7 @@ class ItemTransformer extends Resource
       'name' => $this->when($this->name,$this->name),
       'value' => $this->when($this->value,$this->value),
       'mainImage' => $this->mainImage,
+      'redeems' => RedeemTransformer::collection($this->whenLoaded('redeems')),
       'createdAt' => $this->when($this->created_at,$this->created_at),
       'updatedAt' => $this->when($this->updated_at,$this->updated_at)
     ];

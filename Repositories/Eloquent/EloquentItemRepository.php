@@ -53,6 +53,16 @@ class EloquentItemRepository extends EloquentBaseRepository implements ItemRepos
         $orderWay = $filter->order->way ?? 'desc';//Default way
         $query->orderBy($orderByField, $orderWay);//Add order to query
       }
+      
+      /*
+      if (isset($filter->userId)) {
+        $userId = $filter->userId;
+        $query->whereDoesntHave('redeems',function ($q) use($userId){
+              $q->where('user_id',$userId);
+        });
+      }
+      */
+
 
     }
 

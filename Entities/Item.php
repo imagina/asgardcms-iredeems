@@ -20,6 +20,11 @@ class Item extends Model
     'value'
   ];
 
+  public function redeems()
+  {
+    return $this->hasMany(Redeem::class);
+  }
+
   public function getMainImageAttribute()
   {
       $thumbnail = $this->files()->where('zone', 'mainimage')->first();

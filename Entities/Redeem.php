@@ -11,6 +11,7 @@ class Redeem extends Model
 
     protected $fillable = [
       'user_id',
+      'item_id',
       'description',
       'points'
     ];
@@ -19,4 +20,10 @@ class Redeem extends Model
     {
       return $this->belongsTo("Modules\User\Entities\Sentinel\User","user_id");
     }
+
+    public function item()
+    {
+        return $this->belongsTo(Item::class);
+    }
+
 }

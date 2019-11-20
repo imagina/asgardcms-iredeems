@@ -17,6 +17,7 @@ class CreateIredeemsRedeemsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on(config('auth.table', 'users'))->onDelete('restrict');
+            $table->integer('item_id')->unsigned();
             $table->string('description')->nullable();
             $table->integer('points');
             $table->timestamps();

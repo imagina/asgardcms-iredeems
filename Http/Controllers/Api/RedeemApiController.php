@@ -95,13 +95,12 @@ class RedeemApiController extends BaseApiController
       $this->validateRequestApi(new CreateRedeemRequest($data));
 
       // Validate Points has User
-      $pointsAvailable = iredeems_availablePointsOfUser($request->user_id);
+      $pointsAvailable = iredeems_availablePointsOfUser($data['user_id']);
 
-      // User can't get the item
-      if($pointsAvailable<$request->used_points){
+      if($pointsAvailable<$data['points']){
         throw new \Exception("Not points available",500);
       }
-     
+      
       //Create
       $redeem = $this->redeem->create($data);
       
