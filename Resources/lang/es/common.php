@@ -28,6 +28,7 @@ return [
     'validation' => [
     ],
     'settings'=>[
+      'points-month' => 'Puntos Meta Mensual',
       'points-per-register-user-checkbox'=>'Habilitar puntos por registro de usuario',
       'points-per-register-user'=>'Cantidad de puntos por registro de usuario',
       'points-per-order-greater-than-amount-checkbox'=>'Habilitar puntos por total de compra mayor a un monto definido',

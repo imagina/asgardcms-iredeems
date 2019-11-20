@@ -2,6 +2,14 @@
 
 return [
 
+    //Points Month
+    'points-month' => [
+        'description'  => 'iredeems::common.settings.points-month',
+        'view'         => 'number',
+        'translatable' => false,
+        'default'=>0
+    ],
+
     //Iprofile Points per register user
     'points-per-register-user-checkbox' => [
         'description'  => 'iredeems::common.settings.points-per-register-user-checkbox',

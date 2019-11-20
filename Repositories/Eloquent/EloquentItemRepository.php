@@ -53,6 +53,11 @@ class EloquentItemRepository extends EloquentBaseRepository implements ItemRepos
         $orderWay = $filter->order->way ?? 'desc';//Default way
         $query->orderBy($orderByField, $orderWay);//Add order to query
       }
+
+      //Get Items exclude
+      if (isset($filter->exclude)) {
+        $query->whereNotIn('id', $filter->exclude);
+      }
       
       /*
       if (isset($filter->userId)) {

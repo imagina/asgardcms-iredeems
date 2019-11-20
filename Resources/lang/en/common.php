@@ -28,6 +28,7 @@ return [
     'validation' => [
     ],
     'settings'=>[
+      'points-month' => 'Monthly goal points',
       'points-per-register-user-checkbox'=>'Enable points for user registration',
       'points-per-register-user'=>'Number of points per user record',
       'points-per-order-greater-than-amount-checkbox'=>'Enable points for purchase total greater than a defined amount',
